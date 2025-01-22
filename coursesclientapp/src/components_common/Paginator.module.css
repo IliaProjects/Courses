@@ -1,0 +1,80 @@
+.paginatorContainer {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+
+    width: 100%;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    
+    border-top: solid 1px var(--palette-2-5);
+}
+
+.backward, .forward {
+    width: fit-content;
+    height: 30px;
+    color: var(--palette-2-5);
+}
+
+    .backward svg,
+    .forward svg {
+        width: 50%;
+        height: 100%;
+        opacity: 0.5;
+    }
+
+    .arrowsActive svg{
+        color: var(--palette-1-5);
+    }
+
+    .arrowsActive svg:hover{
+        opacity: 1;
+        cursor: pointer;
+    }
+
+.pagesNr {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+    .pagesNr .number {
+        font-weight: 400;
+        height: 30px;
+        width: 20px;
+        /* padding: 4px 8px; */
+        color: var(--palette-1-1);
+        opacity: 0.5;
+    }
+    
+        .pagesNr .number:hover{
+            opacity: 1;
+            cursor: pointer;
+            margin-bottom: 5px;
+            background-color: var(--palette-1-7);
+            transition: ease-in 0.05s;
+        }
+
+    .pagesNr .active {
+        font-weight: 600;
+        height: 30px;
+        width: 20px;
+        /* padding: 4px 8px; */
+        color: var(--palette-1-1);
+        opacity: 1;
+        margin-bottom: 4px;
+        border-bottom: solid 1px var(--palette-1-1);
+        background-color: var(--palette-1-7);
+        transition: ease-in 0.25s;
+    }
+
+    
+    .pagesNr >* {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0px 5px;
+    }

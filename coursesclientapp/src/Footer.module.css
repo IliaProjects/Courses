@@ -1,0 +1,95 @@
+.footer {
+    /* position: absolute; */
+    /* min-width: 720px; */
+    padding: 0 32px;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    --footer-height: 128px;
+    min-height: var(--footer-height);
+    z-index: 10000;
+    /* background: linear-gradient(180deg, #00000017, transparent); */
+    transition: all 0.3s linear;
+    /* background: linear-gradient(0deg, #f1f2f3, #ffffff, #f1f2f3); */
+    /* animation: Header_header-fadein__XGV9F 1s ease-out; */
+    /* background: white; */
+    /* border-bottom-style: solid; */
+    /* box-shadow: 0 0 5px 0px #00000080; */
+}
+
+        .footer .logoWrapper {
+            height: 100%;
+            width: fit-content;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+            .footer .logoWrapper img {
+                height: 100%;
+            }
+
+        .footer .phoneContactContaner {
+            display: flex;
+            align-items: center;
+        }
+            .footer .phoneContactContaner svg {
+                display: flex;
+                align-items: center;
+                width: 20px;
+                height: 20px;
+                color: #975b7d;
+            }
+        
+            .footer .phoneContactContaner text {
+                font-size: 16px;
+                font-weight: 500;
+                font-style: italic;
+                margin-left: 4px;
+                color: var(--palette-2-1);
+            }
+
+        
+        .footer .logoWrapper {
+            padding: 24px;
+        }
+        .footer .contactsContainer {
+            color: #975b7d;
+            display: flex;
+        }
+
+            .footer .contactsContainer svg {
+                border-radius: 4px;
+                width: 24px;
+                height: 24px;
+                margin-left: 4px;
+            }
+
+            .footer .contactsContainer svg:hover {
+                cursor: pointer;
+            }
+
+@media (max-width: 480px) {
+    .footer {
+        --footer-height: 112px;
+        padding: 0 16px;
+    }
+
+    .footer .contactsContainer svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .footer .phoneContactContaner svg {
+        width: 18px;
+        height: 18px;        
+    }
+        
+    .footer .phoneContactContaner text {
+        font-size: 12px;
+    }
+}

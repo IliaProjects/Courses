@@ -1,0 +1,410 @@
+.adminUsersContainer {
+    width: 100%;
+    /* padding: 0px 48px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;
+}
+
+    .adminUsersContainer .adminHeader {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        width: -moz-available;          /* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        width: fill-available;
+        border-bottom: solid 1px var(--palette-2-5);
+        animation: admin-header-fadein 0.3s;
+        height: 48px;
+    }
+
+    @keyframes admin-header-fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+        .adminUsersContainer .adminHeader .hederClickIcons {
+            padding: 0 16px;
+            display: flex;
+        }
+            .adminUsersContainer .adminHeader .hederClickIcons svg {
+                width: 20px;
+                height: 20px;
+                margin: 4px 2px;
+                color: var(--palette-2-4);
+                opacity: 50%;
+            }        
+            .adminUsersContainer .adminHeader .hederClickIcons >*:hover, 
+            .adminUsersContainer .adminHeader .hederClickIcons >*.active {
+                color: var(--palette-1-6);
+                opacity: 1;
+                cursor: pointer;
+            }
+
+        .adminUsersContainer .adminHeader .hederClickIcons input {
+            border: none;
+            outline: none;
+            border-bottom: 1px solid var(--palette-1-3);
+            opacity: 0.25;
+            width: 128px;
+            animation: input-fadein 0.1s ease-out;
+        }
+        
+        @keyframes input-fadein {
+            from { width: 0; }
+            to { width: 128px; }
+        }
+            .adminUsersContainer .adminHeader input:hover {
+                color: var(--palette-1-3);
+                opacity: 1;
+                cursor: pointer;
+            }
+        
+        .adminUsersContainer .adminHeader .headerSortingContainer {
+            margin-left: auto;
+            display: flex;
+        }
+
+        .adminUsersContainer .adminHeader .hederTitle {
+            display: flex;
+            align-items: center;
+            color: var(--palette-1-2);
+        }
+            .adminUsersContainer .adminHeader .hederTitle > * {
+                width: auto;
+            }
+            
+            .adminUsersContainer .adminHeader .hederTitle svg {
+                width: 32px;
+                height: 32px;
+                margin: 0 8px;
+            }
+    .usersList {
+        width: 100%;
+        margin: 12px 0;
+        padding: 0 12px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: auto;
+        overflow-x: hidden;
+        animation: users-list-fadein 0.6s ease-out;
+    }
+
+    @keyframes users-list-fadein {
+        from {
+            margin-top: 32px;
+            opacity: 0;
+        }
+        to {
+            margin-top: 12px;
+            opacity: 1;
+        }
+    }
+        .usersList .userItem {
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            border: 0px outset #edededb0;
+            /* background: linear-gradient(180deg, var(--palette-2-7), transparent); */
+            border-radius: 8px;
+            width: 100%;
+            width: -moz-available;          /* WebKit-based browsers will ignore this. */
+            width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+            width: fill-available;
+            position: relative;
+            min-width: fit-content;
+            max-width: 720px;
+            &:first-child {
+                margin-top: 8px;
+            }
+        }
+
+            .usersList .adminCard {
+                box-shadow: 0px 0px 7px -2px #653281;
+            }
+
+            .usersList .directorCard {
+                box-shadow: 0px 0px 7px -2px #813232;
+            }
+
+            .usersList .userCard {
+                box-shadow: 0px 0px 7px -2px #326381;
+            }
+
+            .usersListSeparated :nth-last-child(1 of .adminCard),
+            .usersListSeparated :nth-last-child(1 of .directorCard) {
+                margin-bottom: 48px;
+            }
+                .usersListSeparated :nth-last-child(1 of .adminCard)::after,
+                .usersListSeparated :nth-last-child(1 of .directorCard)::after {
+                    position: absolute;
+                    content: '';
+                    border-bottom: 1px dashed var(--palette-2-4);
+                    transform: translateX(-50%);
+                    bottom: -26px;
+                    left: 50%;
+                    max-width: 1280px;
+                    width: calc(100% - 8px);
+                }
+
+            .usersList .userItem>* {
+                margin: 12px;
+            }
+
+            .usersList .userItem .photo {
+                display: flex;
+                align-items: center;
+            }
+                .usersList .userItem .nullUserPhoto {
+                    height: 96px;
+                    width: 96px;
+                    color: var(--palette-2-2);
+                    opacity: .5;
+                    border-radius: 50%;
+                }
+                .usersList .userItem .userPhotoImg {
+                    height: 96px;
+                    width: 96px;
+                    border-radius: 50%;
+                    padding: 1px;
+                    border: solid 1px var(--palette-2-3);
+                }
+
+
+
+            .usersList .userItem .profData {
+                display: flex;
+            }
+                .usersList .userItem .profData .iconsColumn {
+                    display: flex;
+                    flex-direction: column;
+                    color: #ffffff;
+                    /* color: #786a92; */
+                    background: #d4d4d4;
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                }
+
+                    .usersList .userItem .profData .iconsColumn>* {
+                        padding: 0 4px;
+                    }
+                    .usersList .userItem .profData .iconsColumn > div:last-child {
+                        border-bottom-left-radius: 4px;
+                    }
+
+                    .usersList .userItem .profData .iconsColumn .rowSpan1 {
+                        display: flex;
+                        align-items: center;
+                        flex: 1;
+                        background: linear-gradient(360deg, var(--palette-2-4), var(--palette-2-6));
+                        border-top: 2px solid white;
+                    }
+
+                        .usersList .userItem .profData .iconsColumn .rowSpan1:hover {    
+                            background: linear-gradient(360deg, var(--palette-3-4), var(--palette-2-6));
+                            cursor: pointer;
+                        }
+
+                    .usersList .userItem .profData .iconsColumn .rowSpan2 {
+                        display: flex;
+                        align-items: center;
+                        flex: 2;
+                        border-top: 2px solid transparent;
+                    }
+                
+                .usersList .userItem .profData .valuesColumn {
+                    display: flex;
+                    flex-direction: column;
+                    width: 144px;
+                    font-weight: 500;
+                    border-top-right-radius: 4px;
+                    border: 2px inset #e2e2e2;
+                    border-left: none;
+                    border-bottom-right-radius: 4px;
+                    font-style: italic;
+                    font-size: 12px;
+                }
+
+                    .usersList .userItem .profData .valuesColumn>* {
+                        flex: 1;
+                        display: flex;
+                        align-items: center;
+                        /* justify-content: end; */
+                        border-top: 1px #e3e3e3;
+                        border-top-style: dashed;
+                        padding: 0 4px;
+                        flex: 1 1;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+
+                    .usersList .userItem .profData .valuesColumn .lastName {
+                        border-top: none;
+                    }
+
+                    .usersList .userItem .profData .valuesColumn .email {
+                        font-weight: 700;
+                    }
+
+                
+            .usersList .userItem .buttons {
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                padding-left: 12px;
+                min-width: 44px;
+                max-width: 76px;
+                flex: 1;
+            }
+
+                .usersList .userItem .buttons>* {
+                    display: flex;
+                    flex: 1 1;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0.5;
+                    background: linear-gradient(270deg, #e9e9e9, #7686ff00);
+                    border-radius: 0px;
+                    border-left: 1px outset;
+                    margin: 0px 0;
+                    border-color: #b8c4ce80;
+                }
+
+                .usersList .userItem .buttons .active:hover {
+                    opacity: 1;
+                    cursor: pointer;
+                }
+                
+                .usersList .userItem .buttons>* {
+                    color: var(--palette-2-5);
+                    border-top: 1px outset var(--palette-2-3);
+                }
+                
+                .usersList .userItem .buttons>div:first-child {
+                    border-top: none;
+                    border-top-right-radius: 8px;
+                }
+                
+                .usersList .userItem .buttons>div:last-child {
+                    border-bottom-right-radius: 8px;
+                }
+
+                .usersList .userItem .buttons .deletePhoto {
+                    padding-right: 4px;
+                }
+
+                .usersList .userItem .buttons .edit.active  {
+                    color: var(--palette-1-5);
+                }
+                .usersList .userItem .buttons .deletePhoto.active {
+                    color: var(--palette-6-5);
+                }
+                .usersList .userItem .buttons .delete.active {
+                    color: var(--palette-6-5);
+                }
+                .usersList .userItem .buttons .okMark.active {
+                    color: var(--palette-4-4);
+                }
+                .usersList .userItem .buttons .crossMark.active {
+                    color: var(--palette-2-2);
+                }
+
+        .usersList .userItem .userData {
+            display: flex;
+            border: 2px solid var(--palette-2-6);
+            border-radius: 4px;
+            background: var(--palette-2-7);
+        }
+            .usersList .userItem .userData .labes {
+                display: flex;
+                flex-direction: column;
+                font-weight: 800;
+                font-size: 12px;
+                border-right: 2px solid var(--palette-2-6);
+                width: 46px;
+            }
+                .usersList .userItem .userData .labes>* {
+                    flex:1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 8px;
+                    background: linear-gradient(180deg, #ffffff00, #7b92a540);
+                    color: var(--palette-2-3);
+                }
+                .usersList .userItem .userData .labes>div:first-child{
+                    border-top-left-radius: 2px;
+                }
+                .usersList .userItem .userData .labes>div:last-child{
+                    border-bottom-left-radius: 2px;
+                    border-top: 2px solid var(--palette-2-6);
+                }
+
+                    .usersList .userItem .userData .labes .icon svg {
+                        width: 24px;
+                        height: 24px;
+                    }
+                
+
+            .usersList .userItem .userData .valuesColumn {    
+                display: flex;
+                flex-direction: column;
+                font-size: 12px;
+                width: 98px;
+                font-weight: 500;
+                font-style: italic;
+            
+            }
+                .usersList .userItem .userData .valuesColumn>* {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    padding: 0 8px;
+                    border-bottom: 2px solid var(--palette-2-6);
+                }
+                .usersList .userItem .userData .valuesColumn>div:last-child{
+                    border: none;
+                }
+
+                .usersList .userItem .userData .valuesColumn .onlineNever {
+                    opacity: 0.5;
+                }
+
+                .usersList .userItem .userData .valuesColumn .onlineNow {
+                    color: var(--palette-4-4);
+                    font-weight: 700;
+                }
+        .usersList .userItem .userRoleContainer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(90deg, #f5f5f5, transparent);
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-right: 1px solid var(--palette-2-6);
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            margin: 0;
+            margin-right: 12px;
+            min-width: 32px;
+            max-width: 64px;
+        }
+        
+        .usersList .userItem .emptySpace { 
+            flex:1;
+            margin: 0;
+            padding: 0
+        }

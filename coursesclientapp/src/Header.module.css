@@ -1,0 +1,118 @@
+.header {
+    position: absolute;
+    min-width: 320px;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 10000;
+    /* background: linear-gradient(180deg, #00000017, transparent); */
+    transition: all 0.3s linear;
+    /* background: linear-gradient(0deg, #f1f2f3, #ffffff, #f1f2f3); */
+    animation: Header_header-fadein__XGV9F 1s ease-out;
+    background: white;
+    /* border-bottom-style: solid; */
+    box-shadow: 0 0 5px 0px #00000080;
+}
+
+@keyframes header-fadein {
+    from {
+        top: calc(-1* var(--header-height));
+    }
+    to {
+        top: 0;
+    }
+}
+/* .header:hover {
+    background: white;
+} */
+
+.logo { 
+    height: 100%;
+    width: fit-content;
+    padding: 8px 12px;
+}
+    .logo:hover {
+        cursor: pointer;
+    }
+    .logo img {
+        height: 100%;
+    }
+
+.menuItem {
+    display: flex;
+    align-items: center;
+    color: #984a4a;
+    /* border-left: 1px solid; */
+    padding: 0 12px;
+}
+
+    .menuItem:hover {
+        background: linear-gradient(180deg, #4ce14c26, transparent);
+        cursor: pointer;
+    }
+    .menuItem.active {
+        background: linear-gradient(180deg, #4ce14c26, transparent);
+        cursor: pointer;
+    }
+
+    .menuItem svg {
+        width: 30px;
+        height: 30px;
+    }
+    .menuItem text {
+        font-size: 28px;
+        font-weight: 600;
+        margin-left: 2px;
+        font-family: serif;
+    }
+
+.loginContainer {
+    /* border-left: 1px solid; */
+    padding: 12px;
+    /* width: var(--header-height); */
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--ansuya-palette-3);
+    animation: loginContainer-fadein 0.6s ease-out;
+    transition: all 0.15s;
+}
+
+@keyframes loginContainer-fadein {
+    from {
+        right: -64px;
+    }
+    to {
+        right: 0;
+    }    
+}
+
+.loginContainer:hover {
+    cursor: pointer;
+    background: var(--palette-2-6);
+}
+
+    .loginContainer svg {
+        height: 20px;
+        width: 20px;
+    }
+
+    .loginContainer span {
+        font-size: 20px;
+        margin-left: 2px;
+        margin-right: 2px;
+        font-weight: 500;
+        font-family: serif;
+    }
+@media (max-width: 720px) {
+    .menuItem svg {
+        width: 24px;
+        height: 24px;
+    }
+    .menuItem text {
+        font-size: 22px;
+    }
+}

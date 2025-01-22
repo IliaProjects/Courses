@@ -1,0 +1,111 @@
+@import url("../../../Palette.css");
+
+.courses-page{
+    position: absolute;
+    /* padding: 0 48px; */
+    height: 100%;
+    width: 100%;
+}
+
+.courses-title {
+    padding: 16px 0;
+    display: flex;
+    align-items: center;
+    color: var(--palette-1-1);
+    width: 100%;
+    /* border-bottom: solid 2px var(--palette-2-6); */
+}
+.courses-title svg{
+    height: 32px;
+    width: 32px;
+    margin: 10px;
+}
+
+.courses-flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.courses-flexbox-empty { 
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    color: var(--palette-2-5);
+    font-size: 16px;
+}
+
+.course-item {
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 16px 8px;
+    box-shadow: 0px 0px 6px rgb(0 0 0 / 60%);
+    border-radius: 12px;
+    background: linear-gradient(#ffffff, var(--palette-2-7));
+    animation: courseitem-fadein .3s;
+    /* padding: 36px; */
+}
+.course-item:hover {
+    cursor: pointer;
+    background: linear-gradient(var(--palette-1-7), var(--palette-2-7));
+}
+@keyframes courseitem-fadein {
+    from {
+        right: -64px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+.course-texts {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;    
+}
+
+    .course-item img {
+        height: 100%;
+        place-self: center;
+        border-top-left-radius: 12px; 
+        border-bottom-left-radius: 12px; 
+    }
+    .course-item h5, p {
+            /* white-space: nowrap; Текст не переносится */
+            /* text-overflow: ellipsis; */
+    }
+
+    .course-name {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 100%;
+        height: 50%;
+        font-weight: 700;
+    }
+    .course-description {
+        height: 50%;    
+        font-weight: 500;
+        font-size: 12px;
+    }
+    .course-description span {
+        max-height: 100%;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }

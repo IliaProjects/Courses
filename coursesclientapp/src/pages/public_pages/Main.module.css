@@ -1,0 +1,284 @@
+.container {
+    --wrapper-margins: 32px;
+    --block-width: calc((100vw - 5px - var(--wrapper-margins))/2);
+    --block-height: calc(var(--block-width) * 0.6);
+    --wrapper-width: calc(var(--block-width) - var(--wrapper-margins));
+    --wrapper-height: calc(var(--block-height) - var(--wrapper-margins));
+    --title-height: 36px;
+    --body-height: calc(var(--wrapper-height) - var(--title-height));
+    --body-margins: 24px;
+    --poster-width: calc(var(--body-height) - var(--body-margins)*2);
+    --buttonsBlock-width: calc(var(--wrapper-width) - var(--body-margins)*2 - var(--poster-width));
+    --buttonsBlock-margins: 12px;
+    --sectionButton-width: calc((var(--buttonsBlock-width) - 5px)/2 - var(--buttonsBlock-margins)* 1.5);
+    --button-height: calc(var(--sectionButton-width)/3);
+    --sectionButtons-height: calc(var(--body-height) - var(--body-margins)*3 - var(--button-height));
+    --purchaseButton-width: calc(var(--buttonsBlock-width) - 5px - var(--buttonsBlock-margins)*2);
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: fit-content;
+    padding-right: var(--wrapper-margins);
+    padding-bottom: var(--wrapper-margins);
+}
+
+    .block {
+        width: var(--block-width);
+        padding-top: var(--wrapper-margins);
+        padding-left: var(--wrapper-margins);
+        height: var(--block-height);
+    }
+    .block:has(> .imageTwister) {
+        padding: 0;
+        margin-top: 0px;
+    }
+
+    .block:has(> .imageTwister) {
+        width: 100vw; 
+        height: calc(100vw * 0.6);
+        max-width: 1280px;
+        max-height: calc(1280px * 0.6);
+    }
+
+    .container .block .imageTwister {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        height: 0px;
+        padding-top: 57%;
+        background: linear-gradient(180deg, white, transparent);
+    }
+        .container .block .imageTwister .imgVertical{
+            height: 100%;
+            overflow-y: scroll;
+            overflow-y: overlay;
+            max-width: 100%;
+            
+        }
+        .container .block .imageTwister .imgHorisontal{
+            width:  100%;
+            height:  auto;            
+            max-height: 100%;
+        }
+
+    .container .block .imageTwister img {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        transition: opacity 0.9s;
+        animation: img-fadein 0.3s ease-out;
+    }
+
+    .container .block .courseDisplayWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        height: var(--wrapper-height);
+        /* padding-top: 57%; */
+    }
+
+    .container .block .courseDisplayWrapper .courseDisplay {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        
+        box-shadow: 0 0 8px 1px #a8a8a8ad;
+        /* padding: 12px; */
+        /* background: linear-gradient(180deg, #f8f9fa3b, transparent); */
+        background: #ffffff80;
+        border-radius: 12px;
+    }
+
+        .container .block .courseDisplay .title {
+            border-bottom: 1px solid #e1e7ec80;
+            font-size: 18px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            font-weight: 600;
+            color: var(--palette-2-2);
+            min-height: var(--title-height);
+            height: var(--title-height);
+            padding: 0 12px;
+            align-items: center;
+            /* padding: 24px; */
+        }
+
+            .container .block .courseDisplay .title span {
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+        .container .block .courseDisplay .body {
+            display: flex;
+            overflow: hidden;
+            padding: var(--body-margins);
+            height: var(--body-height);
+        }
+
+            .container .block .courseDisplay .body .buttonsBlock {
+                width: var(--buttonsBlock-width);
+                display: flex;
+                flex-direction: column;
+            }
+
+            .container .block .courseDisplay .body .buttonsBlock .button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 4px;
+                box-shadow: 0px 0px 6px 1px #646464b0;
+                background: linear-gradient(0deg, var(--palette-2-7), transparent);
+                border: 1px solid var(--palette-2-6);
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--palette-2-3);     
+                opacity: 0.75;
+                transition: opacity .15s; 
+            }
+
+            .container .block .courseDisplay .body .buttonsBlock .button:hover {
+                cursor: pointer;
+                opacity: 1;
+            }
+                .container .block .courseDisplay .body .buttonsBlock .sections {
+                    height: -moz-fit-content;
+                    height: fit-content;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-content: start;
+                    /* --gap: 12px; */
+                    align-self: center;
+                    /* gap: var(--gap); */
+                    /* flex: 1; */
+                    height: var(--sectionButtons-height);
+                    margin-bottom: var(--body-margins);
+                    overflow-y: auto;
+                    padding-left: var(--buttonsBlock-margins);
+                    padding-bottom: var(--buttonsBlock-margins);
+                }
+
+                    .container .block .courseDisplay .body .buttonsBlock .sections .sectionButton {
+                        height: var(--button-height);
+                        width: var(--sectionButton-width);
+                        margin-top: var(--buttonsBlock-margins);
+                        margin-right: var(--buttonsBlock-margins);
+                        /* background: var(--palette-2-6); */
+                    }
+
+                .container .block .courseDisplay .body .buttonsBlock .orderCourse {
+                    height: var(--button-height);
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    /* flex-direction: column; */
+                    justify-content: center;
+                    /* padding-right: 12px; */
+                }
+
+                    .container .block .courseDisplay .body .buttonsBlock .orderCourse .orderCourseButton {
+                        height: var(--button-height);
+                        width: var(--purchaseButton-width);
+                        padding: 12px;
+                        background: transparent;
+                        color: #975b7d;
+                        font-weight: 600;
+                        border-radius: 6px;
+                        box-shadow: 0px 0px 6px 3px #975b7d80;
+                    }
+
+            .container .block .courseDisplay .body .poster {
+                width: var(--poster-width);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .container .block .courseDisplay .body .poster img {
+                    max-height: 100%;
+                }
+
+
+@keyframes img-fadein { 
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        --wrapper-margins: 24px;
+        --block-width: calc((100vw - 5px));
+        --block-height: calc(var(--block-width) * 0.6);
+        --wrapper-width: calc(var(--block-width) - var(--wrapper-margins));
+        --wrapper-height: calc(var(--block-height) - var(--wrapper-margins));
+        --title-height: 36px;
+        --body-height: calc(var(--wrapper-height) - var(--title-height));
+        --body-margins: 24px;
+        --poster-width: calc(var(--body-height) - var(--body-margins)*2);
+        --buttonsBlock-width: calc(var(--wrapper-width) - var(--body-margins)*2 - var(--poster-width));
+        --buttonsBlock-margins: 12px;
+        --sectionButton-width: calc((var(--buttonsBlock-width) - 5px)/2 - var(--buttonsBlock-margins)* 1.5);
+        --button-height: calc(var(--sectionButton-width)/3);
+        --sectionButtons-height: calc(var(--body-height) - var(--body-margins)*3 - var(--button-height));
+        --purchaseButton-width: calc(var(--buttonsBlock-width) - 5px - var(--buttonsBlock-margins)*2);
+    }
+
+    .block {
+        width: var(--block-width);
+        padding: 0 var(--wrapper-margins);
+        margin-top: var(--wrapper-margins);
+        padding-bottom: var(--wrapper-margins);
+    }
+    .block:has(> .imageTwister) {
+        padding: 0;
+        margin-top: 0px;
+    }
+    .container {
+        padding: 0;
+    }
+
+    .container .block .courseDisplay {
+        padding: 0;
+    }
+
+    .container .block .courseDisplay .title {
+        font-size: 18px;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .container .block .courseDisplay .title span {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+}
+
+@media (max-width: 320px) {
+    .container {
+        --block-width: 320px;
+    }
+
+    .block:has(> .imageTwister) {
+        width: var(--block-width);
+        height: calc(var(--block-width) * 0.6);
+    }
+}

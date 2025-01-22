@@ -1,0 +1,77 @@
+.item {
+    background: linear-gradient(90deg, #deff710f, #71ffa60f, #7185ff0f);
+    width: 128px;
+    height: 192px;
+    margin: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 0px solid var(--palette-2-4);
+    box-shadow: 0px 0px 14px #bdbdbd;
+    transition: all 0.1s ease-in-out;
+    text-decoration: auto;
+    color: var(--palette-2-2);
+}
+.item:hover {
+    margin: 0;
+    width: 152px;
+    height: 216px;
+    cursor: pointer;
+}
+
+    .item .imageContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        height: 0;
+        padding-top: 100%;
+    }
+
+        .item .imageContainer>* {
+            position: absolute;
+            margin-bottom: 100%;
+        
+        }
+
+        .item .imageContainer .imgHorisontal {
+            height: auto;
+            width: 100%;
+        }
+
+        .item .imageContainer .imgVertical {
+            height: 100%;
+            width: auto;
+        }
+        
+        .item .imageContainer .noPhoto {
+            width: 75%;
+            height: 75%;
+            color: var(--palette-2-4);
+        }
+
+    .item .courseName {
+        overflow: hidden;
+        width: min-content;
+        width: 100%;
+        width: -moz-available;          /* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        width: fill-available;
+        height: 64px;
+        font-size: 12px;
+        font-weight: 700;
+        font-style: italic;
+        padding: 4px;
+        /* background: linear-gradient(0deg, #9eafc1, white); */
+        /* background: linear-gradient(180deg, gainsboro, white);    */
+        border-top: 1px solid var(--palette-2-4);
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+    }
+
+        .item .courseName text {
+            word-break: break-word;
+        }

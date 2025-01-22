@@ -1,0 +1,48 @@
+.adminOrdersPage {
+    width: 100%;
+    /* padding: 0px 48px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    height: 100%;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: fill-available;
+}
+
+    .adminOrdersPage .adminHeader {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        width: -moz-available;          /* WebKit-based browsers will ignore this. */
+        width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+        width: fill-available;
+        border-bottom: solid 1px var(--palette-2-5);
+        animation: admin-header-fadein 0.3s;
+        height: 48px;
+    }
+
+    @keyframes admin-header-fadein {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .adminOrdersPage .adminHeader .headerTitle {
+        display: flex;
+        align-items: center;
+        color: var(--palette-1-2);
+    }
+        .adminOrdersPage .adminHeader .headerTitle > * {
+            width: auto;
+        }
+        
+        .adminOrdersPage .adminHeader .headerTitle svg {
+            width: 32px;
+            height: 32px;
+            margin: 0 8px;
+        }

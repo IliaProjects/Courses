@@ -1,0 +1,92 @@
+
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+    margin: 0 8px;
+}  
+
+  .checkboxWrapper::before {
+    margin-right: 4px;
+    font-size: 12px;
+    font-weight: 600px;
+    content: '(...)';
+    font-style: italic;
+    opacity: 0.5;
+  }
+    
+  .checkboxWrapper:hover::before {
+    content: "Админы первые";
+    font-weight: 600;
+    font-style: italic;
+    opacity: 0.5;
+  }
+    
+  .checkboxWrapper::after {
+    content: "";
+    border-right: 1px solid var(--palette-2-6);
+    margin-left: 8px;
+    height: calc(100% + 12px);
+  }
+
+  .checkboxWrapper .checkBox {
+    appearance: none;
+    background-color: #dfe1e4;
+    border-radius: 72px;
+    border-style: none;
+    flex-shrink: 0;
+    height: 14px;
+    margin: 0;
+    position: relative;
+    width: 24px;
+  }
+
+  .checkboxWrapper .checkBox::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    position: absolute;
+    right: -6px;
+    top: -6px;
+  }
+
+  .checkboxWrapper .checkBox,
+  .checkboxWrapper .checkBox::after {
+    transition: all 100ms ease-out;
+  }
+
+  .checkboxWrapper .checkBox::after {
+    background-color: #fff;
+    border-radius: 50%;
+    content: "";
+    height: 10px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 10px;
+  }
+
+  .checkboxWrapper input[type=checkbox] {
+    cursor: default;
+  }
+
+  .checkboxWrapper .checkBox:hover {
+    background-color: #c9cbcd;
+    transition-duration: 0s;
+  }
+
+  .checkboxWrapper .checkBox:checked {
+    background-color: #6e79d6;
+  }
+
+  .checkboxWrapper .checkBox:checked::after {
+    background-color: #fff;
+    left: 12px;
+  }
+
+  .checkboxWrapper :focus:not(.focus-visible) {
+    outline: 0;
+  }
+
+  .checkboxWrapper .checkBox:checked:hover {
+    background-color: #535db3;
+  }

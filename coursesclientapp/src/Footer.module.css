@@ -42,7 +42,7 @@
                 align-items: center;
                 width: 20px;
                 height: 20px;
-                color: #975b7d;
+                color: #139f00bd;
             }
         
             .footer .phoneContactContaner text {
@@ -58,7 +58,7 @@
             padding: 24px;
         }
         .footer .contactsContainer {
-            color: #975b7d;
+            color: #00000024;
             display: flex;
         }
 

@@ -13,9 +13,9 @@ const Footer = (props) => {
                 <FaPhone/>
                 <text>+373 79997272</text>
             </div>
-            <div className={footerCSS.logoWrapper}>
+            {/* <div className={footerCSS.logoWrapper}>
                 <img src={require("./img/logo_incolorbalance.png")}/>
-            </div>
+            </div> */}
             <div className={footerCSS.contactsContainer}>
                 <FaTelegram />
                 <FaViber />

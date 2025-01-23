@@ -28,9 +28,9 @@ const Main = (props) => {
     return(
         <div className="content-with-footer">
             <div className={css.container}>
-                <div className={css.block}>
+                {/* <div className={css.block}>
                     <Twister/>
-                </div>
+                </div> */}
                 { courses && 
                 courses.map(el => (
                     <div className={css.block}>

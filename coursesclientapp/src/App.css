@@ -87,7 +87,8 @@ html {
 }
 
 body { 
-    background-image: url("img_backgrounds/simplebackround.jpg");
+    background-image: url("img_backgrounds/background.jpg");
+    /* background-image: url("img_backgrounds/simplebackround.jpg"); */
     background-position: right;
     background-repeat: no-repeat;
     background-attachment: fixed;

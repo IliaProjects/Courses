@@ -7,9 +7,9 @@ import { CiLogin } from "react-icons/ci";
 const Header = (props) => {
     return(
         <div className={headerCSS.header}>
-          <NavLink className={(navData) => navData.isActive ? `${headerCSS.logo} ${headerCSS.active}` : `${headerCSS.logo}`} to="/">
+          {/* <NavLink className={(navData) => navData.isActive ? `${headerCSS.logo} ${headerCSS.active}` : `${headerCSS.logo}`} to="/">
             <img src={require("./logo.png")}/>
-          </NavLink>
+          </NavLink> */}
           <NavLink className={(navData) => navData.isActive ? `${headerCSS.menuItem} ${headerCSS.active}` : headerCSS.menuItem} to="/catalog">
             <MdLibraryBooks style={{"margin-top": "2px"}}/>
             <text>Курсы</text>
